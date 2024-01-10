@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: aauzena
+    buildCommand: "./build.sh"
+    env: python
+    startCommand: "gunicorn evaluator.wsgi:application"
