@@ -1,0 +1,64 @@
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply a background color and set some default text styles */
+body {
+    background-color: #f8f8f8;
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Center the content horizontally on larger screens */
+.container {
+    max-width: 960px;
+    width: 100%;
+}
+
+/* Add some spacing to elements */
+h1, h2, h3 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Apply a border and padding to a box */
+.box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Apply some basic styles to links */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+header {
+    background-color: #343a40; /* Dark background color */
+    color: #ffffff; /* White text color */
+    padding: 15px 0; /* Add some padding to the top and bottom */
+}
+
+/* Footer styling */
+footer {
+    background-color: #343a40; /* Dark background color */
+    color: #ffffff; /* White text color */
+    padding: 15px 0; /* Add some padding to the top and bottom */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-section, .tasks-section {
+    width: 48%;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.task-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.task-card a, .card a {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.task-card a:hover, .card a:hover {
+    background-color: #45a049;
+}
