@@ -1,0 +1,26 @@
+
+{% extends 'evaluation/base.html' %}
+{% load static %}
+
+{% block body %}
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card p-4">
+          <h2 class="mb-4">User Profile</h2>
+          <p><strong>Username:</strong> {{ user.username }}</p>
+          <p><strong>First Name:</strong> {{ user.first_name }}</p>
+          <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>Phone Number:</strong> {{ user.phone_number|default:"N/A" }}</p>
+          <p><strong>Bio:</strong> {{ user.bio|default:"N/A" }}</p>
+          <p><strong>Position:</strong> {{ user.position|default:"N/A" }}</p>
+          <p><strong>Address:</strong> {{ user.address|default:"N/A" }}</p>
+          <p><strong>Is Employee:</strong> {% if user.is_employee %} Yes {% else %} No {% endif %}</p>
+          <p><strong>Date Joined:</strong> {{ user.date_joined }}</p>
+          <p><strong>Last Updated:</strong> {{ user.updated }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

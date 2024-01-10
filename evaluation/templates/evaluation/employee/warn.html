@@ -1,0 +1,19 @@
+<!-- employee_unauthorized.html -->
+
+{% extends 'evaluation/base.html' %}
+{% load static %}
+
+{% block body %}
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card p-4">
+          <h2 class="mb-4">Unauthorized Access</h2>
+          <p>You are not allowed to access this page as an employee.</p>
+          <p>If you believe this is an error, <a href="{% url 'evaluation:login' %}">Login</a>.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

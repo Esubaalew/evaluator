@@ -1,0 +1,66 @@
+<!-- registration.html -->
+
+{% extends 'evaluation/base.html' %}
+{% load static %}
+{% block body %}
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .registration-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .registration-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        /* Replace input[type="text"], input[type="password"] styles with Bootstrap classes */
+        .form-control {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Replace button styles with Bootstrap classes */
+        .btn {
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <div class="registration-container">
+        <h2>Employee Registration</h2>
+        <form class="registration-form" method="post" action="{% url 'evaluation:registration' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+
+{% extends 'evaluation/base.html' %}
+{% load static %}
+
+{% block body %}
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card p-4">
+          <h2 class="mb-4">Unauthorized Access</h2>
+          <p>You are not allowed to access this page.</p>
+          <p>Please contact your administrator for assistance.</p>
+          <p>If you are an administrator, you can access the Django admin panel <a href="{% url 'admin:index' %}">here</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

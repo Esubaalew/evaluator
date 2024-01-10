@@ -1,0 +1,16 @@
+<!-- index.html -->
+
+{% extends 'evaluation/base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block body %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="display-4">Welcome to Employee Evaluation System</h1>
+                <p class="lead">Empower your team with effective evaluations and feedback.</p>
+                <button class="btn btn-primary" onclick="location.href='{% url 'evaluation:login' %}'">Get Started</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
