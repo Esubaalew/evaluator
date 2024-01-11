@@ -17,6 +17,25 @@
     <header class="bg-dark text-white py-3">
         <div class="container">
             <h1 class="display-4">Addis Ababa Education Bureau</h1>
+
+            {% if user.is_authenticated %}
+                <nav>
+                    {% if not user.is_staff %}
+                        <a href="{% url 'evaluation:evaluate' %}" class="text-white">Evaluate</a>
+                    {% endif %}
+                    <a href="{% url 'evaluation:profile' %}" class="text-white">Profile</a>
+                    <a href="{% url 'evaluation:logout' %}" class="text-white">Logout</a>
+                    {% if user.is_staff %}
+                        <!-- Add Employee link for staff -->
+                        <a href="{% url 'evaluation:registration' %}" class="text-white">Add Employee</a>
+                        <a href="{% url 'admin:index' %}" class="text-white">Add Employee</a>
+                    {% else %}
+                        <!-- Dashboard link for non-staff users -->
+                        <a href="{% url 'evaluation:dashboard' %}" class="text-white">Dashboard</a>
+                    {% endif %}
+                </nav>
+            {% endif %}
+
             <!-- Add any additional header content or navigation here -->
         </div>
     </header>

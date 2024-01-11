@@ -13,14 +13,8 @@ from evaluation.models import Employee, CustomUser
 class CustomLoginView(LoginView):
     template_name = 'evaluation/auth/login.html'
 
-    class CustomLoginView(LoginView):
-        template_name = 'evaluation/auth/login.html'
-
-        def get_success_url(self):
-            if self.request.user.is_staff:
-                return reverse('admin:index')
-            else:
-                return reverse('evaluation:dashboard')
+    def get_success_url(self):
+        return reverse('evaluation:index')
 
 
 @login_required
@@ -37,8 +31,7 @@ def dashboard(request):
 def profile(request):
     if not request.user.is_authenticated:
         return redirect('evaluation:login')
-    if request.user.is_staff:
-        return render(request, 'evaluation/admin/warn.html')
+
     else:
         return render(request, 'evaluation/employee/profile.html', )
 
