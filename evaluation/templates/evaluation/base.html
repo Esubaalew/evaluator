@@ -22,6 +22,7 @@
                 <nav>
                     {% if not user.is_staff %}
                         <a href="{% url 'evaluation:evaluate' %}" class="text-white">Evaluate</a>
+                        <a href="{% url 'evaluation:evaluations' %}" class="text-white">Evaluations</a>
                     {% endif %}
                     <a href="{% url 'evaluation:profile' %}" class="text-white">Profile</a>
                     <a href="{% url 'evaluation:logout' %}" class="text-white">Logout</a>

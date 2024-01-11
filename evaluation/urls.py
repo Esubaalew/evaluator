@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import EvaluationCreateView
+from .views import EvaluationCreateView, EvaluationDetailView, UserEvaluationsView
 
 app_name = 'evaluation'
 urlpatterns = [
@@ -14,4 +14,6 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('profile/', views.profile, name='profile'),
     path('evaluate/', EvaluationCreateView.as_view(), name='evaluate'),
+    path('evaluation/<int:pk>/', EvaluationDetailView.as_view(), name='evaluation_detail'),
+    path('evaluations/', UserEvaluationsView.as_view(), name='evaluations'),
 ]

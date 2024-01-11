@@ -59,5 +59,54 @@ class Evaluation(models.Model):
     source = models.CharField(max_length=20, choices=SOURCE_CHOICES)
     date_evaluated = models.DateTimeField(auto_now_add=True)
 
+    question1 = models.DecimalField(
+        verbose_name='ፍትሐዊ አገልግሎት መስጠት',
+        max_digits=5,
+        decimal_places=2,
+        null=True
+    )
+    question2 = models.DecimalField(
+        verbose_name='ትነሽነት',
+        max_digits=5,
+        decimal_places=2,
+        null=True
+    )
+    question3 = models.DecimalField(
+        verbose_name='ሚዛናዊነት',
+        max_digits=5,
+        decimal_places=2,
+        null=True
+    )
+    question4 = models.DecimalField(
+        verbose_name='ውሳኔ ሰጭነት',
+        max_digits=5,
+        decimal_places=2,
+        null=True
+    )
+    question5 = models.DecimalField(
+        verbose_name='ተገልጋቶችን መረዳት',
+        max_digits=5,
+        decimal_places=2,
+        null=True
+    )
+    question6 = models.DecimalField(
+        verbose_name='ስነ ምግባሩ',
+        max_digits=5,
+        decimal_places=2,
+        null=True
+    )
+    question7 = models.DecimalField(
+        verbose_name='ስራን በጥራት የመስራት',
+        max_digits=5,
+        decimal_places=2,
+        null=True
+    )
+    question8 = models.DecimalField(
+        verbose_name='የስራ ትጋት',
+        max_digits=5,
+        decimal_places=2,
+        null=True
+    )
+
     def __str__(self):
         return f"Evaluation by {self.evaluator.username} for {self.evaluatee.username}"

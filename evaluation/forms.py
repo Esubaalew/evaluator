@@ -23,25 +23,4 @@ class EmployeeRegistrationForm(UserCreationForm):
 class EvaluationForm(forms.ModelForm):
     class Meta:
         model = Evaluation
-        fields = ['evaluatee', 'source']
-
-    def __init__(self, *args, **kwargs):
-        super(EvaluationForm, self).__init__(*args, **kwargs)
-
-        self.questions = [
-            ('question1', 'ፍትሐዊ አገልግሎት መስጠት', 5),
-            ('question2', 'ትነሽነት', 5),
-            ('question3', 'ሚዛናዊነት', 5),
-            ('question4', 'ውሳኔ ሰጭነት', 5),
-            ('question5', 'ተገልጋቶችን መረዳት', 5),
-            ('question6', 'ስነ ምግባሩ', 5),
-            ('question7', 'ስራን በጥራት የመስራት', 5),
-            ('question8', 'የስራ ትጋት', 5),
-        ]
-
-        for field_name, question_text, max_value in self.questions:
-            self.fields[field_name] = forms.IntegerField(
-                label=question_text,
-                widget=forms.NumberInput(attrs={'min': 1, 'max': max_value}),
-                help_text=f"(Max points: {max_value})"
-            )
+        exclude = ['evaluator', 'date_evaluated']
