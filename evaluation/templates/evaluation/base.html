@@ -29,7 +29,7 @@
                     {% if user.is_staff %}
                         <!-- Add Employee link for staff -->
                         <a href="{% url 'evaluation:registration' %}" class="text-white">Add Employee</a>
-                        <a href="{% url 'admin:index' %}" class="text-white">Add Employee</a>
+                        <a href="{% url 'admin:index' %}" class="text-white">Admin-Dashboard</a>
                     {% else %}
                         <!-- Dashboard link for non-staff users -->
                         <a href="{% url 'evaluation:dashboard' %}" class="text-white">Dashboard</a>
