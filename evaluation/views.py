@@ -3,7 +3,7 @@ from decimal import Decimal
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.views import LoginView
 from django.urls import reverse
 from django.utils.decorators import method_decorator
@@ -50,6 +50,12 @@ def logout_view(request):
     return redirect('evaluation:index')
 
 
+class CustomUserDetailView(DetailView):
+    model = CustomUser
+    template_name = 'evaluation/admin/creation.html'
+    context_object_name = 'user'
+
+
 def employee_registration(request):
     if not request.user.is_staff:
         return render(request, 'evaluation/employee/warn.html')
@@ -57,8 +63,7 @@ def employee_registration(request):
         form = EmployeeRegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
-            return redirect(reverse('evaluation:login'))
+            return redirect('evaluation:user_detail', pk=user.pk)
     else:
         form = EmployeeRegistrationForm()
 
@@ -125,3 +130,14 @@ class UserEvaluationsView(ListView):
     def get_queryset(self):
         # Filter evaluations for the logged-in user
         return Evaluation.objects.filter(evaluator=self.request.user).order_by('-date_evaluated')
+
+
+@login_required
+def employee_detail(request, pk):
+    employee = get_object_or_404(CustomUser, pk=pk)
+
+    return render(
+        request,
+        'evaluation/admin/creation.html',
+        {'employee': employee}
+    )

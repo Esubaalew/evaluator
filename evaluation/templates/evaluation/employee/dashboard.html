@@ -6,32 +6,20 @@
 {% block body %}
     <div class="container mt-5">
         <div class="tasks-section mt-4 row">
-            <div class="col-md-6">
-                <div class="card p-3 task-card">
-                    <h3>Open Registration Page</h3>
-                    <p>Register new employees.</p>
-                    <a href="{% url 'evaluation:registration' %}" class="btn btn-primary">Add Employee</a>
-                </div>
-            </div>
+
             <div class="col-md-6">
                 <div class="card p-3 task-card">
                     <h3>Start Evaluating</h3>
                     <p>Evaluate new employees.</p>
-                    <a href="{% url 'evaluation:registration' %}" class="btn btn-primary">Evaluate Employee</a>
+                    <a href="{% url 'evaluation:evaluate' %}" class="btn btn-primary">Evaluate Employee</a>
                 </div>
             </div>
-            <div class="col-md-6 mt-4">
-                <div class="card p-3 task-card">
-                    <h3>Your Evaluation Result</h3>
-                    <p>Your evaluation by other employees.</p>
-                    <a href="{% url 'evaluation:registration' %}" class="btn btn-primary">Open Result</a>
-                </div>
-            </div>
+
             <div class="col-md-6 mt-4">
                 <div class="card p-3 task-card">
                     <h3>View Your Evaluations</h3>
                     <p>See your evaluated employees.</p>
-                    <a href="{% url 'evaluation:registration' %}" class="btn btn-primary">View Evaluations</a>
+                    <a href="{% url 'evaluation:evaluations' %}" class="btn btn-primary">View Evaluations</a>
                 </div>
             </div>
             <!-- You can add more task cards as needed -->
